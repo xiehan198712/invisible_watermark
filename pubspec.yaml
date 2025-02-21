@@ -1,6 +1,7 @@
 name: invisible_watermark
 description: "A Flutter package for making invisible watermarks on images."
-version: 0.0.1
+version: 0.0.1+1
+homepage: "https://github.com/xiehan198712/invisible_watermark"
 
 environment:
   sdk: ^3.5.4
