@@ -11,29 +11,68 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# Invisible Watermark
+
+A Flutter package for adding and extracting invisible watermarks in images. This package allows you to embed hidden text watermarks into images that can later be revealed through special processing.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Add invisible text watermarks to images
+- Extract and visualize hidden watermarks
+- Maximum image size protection (4096x4096)
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add this package to your Flutter project by adding the following to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  invisible_watermark: ^0.0.1
+```
+
+Then run:
+```bash
+flutter pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Basic example of how to use the package:
 
 ```dart
-const like = 'sample';
+import 'package:invisible_watermark/invisible_watermark.dart';
+
+// Create an instance
+final watermark = InvisibleWatermark();
+
+// Add watermark
+final watermarkedBytes = await watermark.addWatermark(
+  imageBytes,
+  'Your Watermark Text'
+);
+
+// Extract watermark
+final extractedBytes = await watermark.extractVisibleWatermark(watermarkedBytes);
 ```
+
+For a complete example, check out the `/example` folder in the repository.
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### Requirements
+- Dart SDK: ^3.5.4
+- Flutter: >=1.17.0
+
+### Dependencies
+- image: ^4.5.2
+
+### Limitations
+- Maximum supported image size: 4096x4096 pixels
+- Performance depends on image size and device capabilities
+- Watermark extraction quality may vary based on image modifications
+
+### Contributing
+Contributions are welcome! Please feel free to submit issues and pull requests.
+
+### License
+This project is licensed under the MIT License - see the LICENSE file for details.
