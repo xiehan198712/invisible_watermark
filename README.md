@@ -20,7 +20,7 @@ A Flutter package for adding and extracting invisible watermarks in images. This
 - Add invisible text watermarks to images
 - Extract and visualize hidden watermarks
 - Maximum image size protection (4096x4096)
-- [x]Todo: add app UI InvisibleWatermarkWidget
+- Todo: add app UI InvisibleWatermarkWidget
 
 ## Getting started
 
